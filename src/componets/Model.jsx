@@ -55,11 +55,14 @@ export default function Model() {
 
     try {
       // First get AI prediction
-      const res = await fetch("http://localhost:5000/predict-json", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ symptoms }),
-      });
+      const res = await fetch(
+        "https://diseasepredictionapp1.onrender.com/predict-json",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ symptoms }),
+        }
+      );
 
       const aiData = await res.json();
       setResult(aiData);
