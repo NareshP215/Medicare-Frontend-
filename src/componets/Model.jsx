@@ -107,10 +107,13 @@ export default function Model() {
     setStatus("");
 
     try {
-      const res = await fetch("http://localhost:5000/measure-ecg", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-      });
+      const res = await fetch(
+        "https://diseasepredictionapp1.onrender.com/measure-ecg",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+        }
+      );
       const data = await res.json();
 
       setAllValues(data.all_values || []);
