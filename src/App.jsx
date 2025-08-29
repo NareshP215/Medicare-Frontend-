@@ -23,7 +23,9 @@ const App = () => {
       try {
         const response = await axios.get(
           "https://medicare-r4rk.onrender.com/api/v1/user/patient/me",
-          { withCredentials: true }
+          {
+            withCredentials: true,
+          }
         );
         setIsAuthenticated(true);
         setUser(response.data.user);
@@ -33,8 +35,7 @@ const App = () => {
       }
     };
     fetchUser();
-  }, []); // ✅ empty dependency array
-
+  }, []);
   return (
     <>
       <Router>
