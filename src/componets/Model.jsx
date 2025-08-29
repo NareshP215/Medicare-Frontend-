@@ -69,7 +69,7 @@ export default function Model() {
 
       // Then send checkup form with AI prediction data
       await axios.post(
-        "http://localhost:4000/api/v1/checkup/send",
+        "https://medicare-r4rk.onrender.com/api/v1/checkup/send",
         { fullName, gender, age, phone, email, symptoms, aiPrediction: aiData },
         {
           withCredentials: true,
